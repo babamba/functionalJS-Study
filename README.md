@@ -74,12 +74,10 @@ _.go(
 const delay500 = (a, name) => {
     console.log('delay500 : ', a);
     return new Promise((resolve) => {
-        console.log(`${name} : ${a}`);
         setTimeout(() => resolve(a), 500);
     });
 };
 
-console.time('');
 go(
     [1, 2, 3, 4, 5, 6, 7, 8],
     C.map((a) => delay500(a * a, 'map 1')),
@@ -88,7 +86,6 @@ go(
     C.take(2),
     // C.reduce(add),
     log,
-    (_) => console.timeEnd('')
 );
 ```
 ![스크린샷 2022-07-08 오후 5 46 33](https://user-images.githubusercontent.com/17538535/177954931-7cfa9001-fd52-454f-9b53-384351b293cc.png)
