@@ -84,7 +84,6 @@ go(
     C.filter((a) => delay500(a % 2, 'filter 2')),
     C.map((a) => delay500(a + 1, 'map 3')),
     C.take(2),
-    // C.reduce(add),
     log,
 );
 ```
